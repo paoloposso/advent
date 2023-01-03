@@ -40,9 +40,9 @@ func fullyContains(sections []string) bool {
 		panic("invalid range")
 	}
 
-	if leftSectionStart < rightSectionStart && leftSectionEnd > rightSectionEnd {
+	if leftSectionStart <= rightSectionStart && leftSectionEnd >= rightSectionEnd {
 		return true
-	} else if leftSectionStart > rightSectionStart {
+	} else if leftSectionStart >= rightSectionStart && rightSectionEnd >= leftSectionEnd {
 		return true
 	} else {
 		return false
